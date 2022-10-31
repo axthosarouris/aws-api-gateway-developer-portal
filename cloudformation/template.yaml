@@ -1227,7 +1227,7 @@ Resources:
       Description: 'Common code used by lambdas'
       ContentUri: ../lambdas/common-layer/
       CompatibleRuntimes:
-        - nodejs12.x
+        - nodejs16.x
 
   DevPortalLambdaFunction:
     Type: AWS::Serverless::Function
@@ -1236,7 +1236,7 @@ Resources:
       Handler: index.handler
       MemorySize: 1024
       Role: !GetAtt BackendLambdaExecutionRole.Arn
-      Runtime: nodejs12.x
+      Runtime: nodejs16.x
       Timeout: 30
       Environment:
         Variables:
@@ -1279,7 +1279,7 @@ Resources:
   #     Handler: index.handler
   #     MemorySize: 128
   #     Role: !GetAtt BackendLambdaExecutionRole.Arn
-  #     Runtime: nodejs12.x
+  #     Runtime: nodejs16.x
   #     Timeout: 30
   #     Layers:
   #       - !Ref LambdaCommonLayer
@@ -1292,7 +1292,7 @@ Resources:
       Handler: index.handler
       MemorySize: 128
       Role: !GetAtt CognitoPreSignupTriggerExecutionRole.Arn
-      Runtime: nodejs12.x
+      Runtime: nodejs16.x
       Timeout: 3
       Environment:
         Variables:
@@ -1308,7 +1308,7 @@ Resources:
       Handler: index.handler
       MemorySize: 128
       Role: !GetAtt CognitoPostConfirmationTriggerExecutionRole.Arn
-      Runtime: nodejs12.x
+      Runtime: nodejs16.x
       Timeout: 3
       Environment:
         Variables:
@@ -1326,7 +1326,7 @@ Resources:
       Handler: index.handler
       MemorySize: 128
       Role: !GetAtt CognitoPostAuthenticationTriggerExecutionRole.Arn
-      Runtime: nodejs12.x
+      Runtime: nodejs16.x
       Timeout: 3
       Environment:
         Variables:
@@ -1453,7 +1453,7 @@ Resources:
   CognitoUserPoolClientSettingsBackingFn:
     Type: AWS::Serverless::Function
     Properties:
-      Runtime: nodejs12.x
+      Runtime: nodejs16.x
       MemorySize: 128
       Timeout: 300
       CodeUri: ../lambdas/cfn-cognito-user-pools-client-settings
@@ -1537,7 +1537,7 @@ Resources:
   CognitoUserPoolDomainBackingFn:
     Type: AWS::Serverless::Function
     Properties:
-      Runtime: nodejs12.x
+      Runtime: nodejs16.x
       MemorySize: 128
       Timeout: 300
       CodeUri: ../lambdas/cfn-cognito-user-pools-domain
@@ -1704,7 +1704,7 @@ Resources:
       Handler: index.handler
       MemorySize: 128
       Role: !GetAtt CatalogUpdaterLambdaExecutionRole.Arn
-      Runtime: nodejs12.x
+      Runtime: nodejs16.x
       Timeout: 20
       Environment:
         Variables:
@@ -1729,7 +1729,7 @@ Resources:
       Handler: index.handler
       MemorySize: 512
       Role: !GetAtt AssetUploaderLambdaExecutionRole.Arn
-      Runtime: nodejs12.x
+      Runtime: nodejs16.x
       Timeout: 300
       Environment:
         Variables:
@@ -1783,7 +1783,7 @@ Resources:
       Handler: replicator.handler
       MemorySize: 128
       Role: !GetAtt CloudFrontEdgeReplicatorRole.Arn
-      Runtime: nodejs12.x
+      Runtime: nodejs16.x
       Timeout: 300
       AutoPublishAlias: Live
       Environment:
@@ -1952,7 +1952,7 @@ Resources:
       Handler: index.handler
       MemorySize: 512
       Role: !GetAtt DumpV3AccountDataExecutionRole.Arn
-      Runtime: nodejs12.x
+      Runtime: nodejs16.x
       Timeout: 300
       Environment:
         Variables:
@@ -2062,7 +2062,7 @@ Resources:
       Handler: index.handler
       MemorySize: 512
       Role: !GetAtt UserGroupImporterExecutionRole.Arn
-      Runtime: nodejs12.x
+      Runtime: nodejs16.x
       # Use the default max timeout duration.
       Timeout: 900
       Environment:
